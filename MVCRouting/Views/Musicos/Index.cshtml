@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MVCRouting.Models.MUSICOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Musico
+        </th>
+        <th>
+            Banda
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.ID
+        </td>
+        <td>
+            @item.NOMBRE
+        </td>
+        <td>
+            @item.BANDA
+        </td>
+        <td>
+            @Html.ActionLink("Eliminar", "Eliminar", new { idmusico = item.ID })
+        </td>
+    </tr>
+}
+
+</table>
